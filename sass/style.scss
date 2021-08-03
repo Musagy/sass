@@ -1,0 +1,34 @@
+// comemzamos curso de Sass :)
+// primero comenzaremos con la instalacion del npm con 
+// npm install -g node-sass
+// despues de eso ya en la carpeda tendremos que usar el terminal para automatizar el compilado de sass a css
+// tenemos que poner
+    // node-sass --watch (carpera de sass) --output (carpeta donde copilara)
+
+// ahora ya que tenemos todo listo comenzemos declarando variables:
+$sizeTitle: 50px;
+    // se hacen con $ y he notado que no aceptan camelCase o no se pero me da errores asi que voy a usar guiones.
+
+// para su aplicacion es poner lo mismo cuando la declaramos
+h1{
+    font-size: $sizeTitle - 20;
+}
+    // con estas podremos poner hacer operacione sin el uso de calc()
+
+// cuando declaramos una vareable le podemos poner al final de su valor un default para saber que ese sera el valor por defecto y sera sobre escrito por cualquier revalorizacion de la variable, estoy incluyen los que esten previamente en el documento escritos
+$BGcolor: rgb(255, 231, 218) ;
+$BGcolor: rgb(0, 0, 0) !default;
+
+body{
+    background-color: $BGcolor;
+}
+    // en la compilacion mando el que no tenia default porque este lo sobreescribio
+
+// tambien las variables pueden funcionar como string poniendolas entre #{}
+// a esto se le llama interpolacion
+$color: red;
+
+.#{$color} {
+    color: $color;
+}
+    // podemos ponerle extra como . u otro # pada determinarlo en una clase o id
